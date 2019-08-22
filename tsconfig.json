@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNEXT",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "jsxFactory": "jsx.createElement"
+  },
+  "exclude": [
+    "./src/**/*.scss"
+  ]
+}

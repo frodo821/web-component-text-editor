@@ -1,0 +1,22 @@
+{
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "max-line-length": [true, 120],
+    "radix": false,
+    "variable-name": [true, "ban-keywords"],
+    "triple-equals": true,
+    "prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "semi": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+.container {
+  background: #121223;
+  width: 50rem;
+  height: 40rem;
+  position: relative;
+  display: block;
+  counter-reset: line-no 1;
+  cursor: text;
+
+  .display {
+    width: 49rem;
+    height: 39rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #fcfcea;
+    overflow: auto;
+    scrollbar-width: 2px;
+
+    .display-line {
+      height: 15px;
+    }
+  }
+
+  .input-line {
+    height: 0.8rem;
+    width: 49rem;
+    position: absolute;
+    left: 0.5rem;
+    border-top: solid 1px #ececaf4c;
+    border-bottom: solid 1px #ececaf4c;
+
+    &:focus {
+      outline: none;
+    }
+
+    .input-area {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      outline: none;
+      resize: none;
+      border: none;
+      overflow: scroll;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0px;
+      top: 0px;
+      left: 0px;
+      width: 1px;
+      height: 0.8rem;
+    }
+
+    .caret {
+      width: 0.1rem;
+      height: 0.8rem;
+      position: absolute;
+      top: 0;
+      background: #fcfcea;
+      animation-name: blink;
+      animation-iteration-count: infinite;
+      animation-duration: 800ms;
+      animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes blink{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "text-editor-element",
+  "version": "1.0.0",
+  "description": "A text editor custom element",
+  "main": "index.js",
+  "author": "frodo821",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "raw-loader": "^3.1.0",
+    "sass-loader": "^7.2.0",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline --watch-content-base --content-base public/ --port 8000 --open /",
+    "check": "yarn run tsc --noEmit && yarn run tslint",
+    "tslint": "yarn run tslint --project tsconfig.json",
+    "tslint-fix": "yarn run tslint --fix --project tsconfig.json"
+  }
+}
