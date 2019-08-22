@@ -21,7 +21,8 @@ String.prototype.deleteAt = function(pos) {
   return this.slice(0, pos) + this.slice(pos + 1);
 };
 
-export default class TextEditor extends jsx.Component<{
+export default class TextEditor extends jsx.Component<
+  {
     rows: number;
     columns: number;
   },
