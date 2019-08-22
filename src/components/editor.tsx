@@ -21,7 +21,12 @@ String.prototype.deleteAt = function(pos) {
   return this.slice(0, pos) + this.slice(pos + 1);
 };
 
-export default class TextEditor extends jsx.Component {
+export default class TextEditor extends jsx.Component<{
+    rows: number;
+    columns: number;
+  },
+  HTMLElement
+> {
   public data: string = '';
   public code: Element;
   public pos: { x: number; y: number } = { x: 0, y: 0 };
@@ -33,6 +38,12 @@ export default class TextEditor extends jsx.Component {
     const il = this.querySelector('.input-line')! as HTMLDivElement;
     const cr = this.querySelector('.caret')! as HTMLDivElement;
     const te = this.querySelector('.input-area') as HTMLTextAreaElement;
+    this.props = {
+      rows: parseInt(this.getAttribute('rows') || '40'),
+      columns: parseInt(this.getAttribute('columns') || '120')
+    };
+    this.current.style.width = `${7 * this.props.columns + 17}px`;
+    this.current.style.height = `${15 * this.props.rows + 17}px`;
     this.current.addEventListener('click', _ => te.focus());
     il.addEventListener('input', _ => {
       console.log('keydown');

@@ -1,10 +1,11 @@
 // tslint:disable-next-line: import-name
 import jsx from './index';
 
-export class Component<P = {}> extends HTMLElement
+export class Component<P = {}, R extends Element = Element> extends HTMLElement
   implements JSX.JSXElement<P> {
   root: ShadowRoot;
-  protected current: Element;
+  protected current: R;
+  props?: P;
 
   constructor() {
     super();
@@ -31,7 +32,7 @@ export class Component<P = {}> extends HTMLElement
     return this.current.querySelectorAll(query);
   }
 
-  render(): HTMLElement {
+  render(): R {
     return <div></div>;
   }
 
